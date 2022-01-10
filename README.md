@@ -1,34 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## --- This application is actually in development, please contact me if you have any question ---
 
-## Getting Started
+# Expedetion Finder
 
-First, run the development server:
+I do mountaineering for many years now and I hear a lot of people struggling to find a climbing or mountaineering partner.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+So the idea is really simple, try to make an application eazy to use, to find people around you that would like to make some mountaineering.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### How does it work ? 
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+You can simply open the application and look around you, or around a specific place, and see all the people that have posted an idea of expedition.
+If no one look interesting for you, then you can add your own expedition and wait for someone to make contact.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### which technos ?
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+I decided to use for this project Next.js, Node.js and MySQL. Why ? Because I didn't know them before start and I wanted to try them.
