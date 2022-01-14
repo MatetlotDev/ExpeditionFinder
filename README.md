@@ -11,6 +11,10 @@ So the idea is really simple, try to make an application eazy to use, to find pe
 You can simply open the application and look around you, or around a specific place, and see all the people that have posted an idea of expedition.
 If no one look interesting for you, then you can add your own expedition and wait for someone to make contact.
 
-### which technos ?
+### Which technos ?
 
 I decided to use for this project Next.js, Node.js and MySQL. Why ? Because I didn't know them before start and I wanted to try them.
+
+### First mockups
+
+![Alt text](https://res.cloudinary.com/matetlot/image/upload/v1642154249/samples/mockup_mtomkw.png "mockups")
