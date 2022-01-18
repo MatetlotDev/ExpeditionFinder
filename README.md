@@ -1,4 +1,4 @@
-## --- Devlopment in progress, please contact me if you have any question ---
+## --- Development in progress, please contact me if you have any question ---
 
 # Expedetion Finder
 
