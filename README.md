@@ -1,4 +1,4 @@
-## --- The mockups of this application are being created, development will begin soon, please contact me if you have any question ---
+## --- Development in progress, please contact me if you have any question ---
 
 # Expedetion Finder
 
