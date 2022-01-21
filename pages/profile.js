@@ -1,6 +1,8 @@
 import styles from '../styles/Profile.module.scss';
 import NavBar from '../comps/navBar';
 
+import { useState } from 'react';
+
 import { FaRegEdit, FaMountain } from 'react-icons/fa';
 import { RiMenLine } from 'react-icons/ri';
 import { GiMountainClimbing, GiRoundStar, GiWarPick, GiMountaintop } from 'react-icons/gi';
@@ -9,6 +11,23 @@ import { FiChevronDown } from 'react-icons/fi';
 import Image from 'next/image';
 
 export default function Profile() {
+
+    const text = 'Salut, Moi c’est Matthias, j’arpente les montagnes depuis un bon bout de temps maintenant. J’ai un bon niveau en rocher et surtout un bon sang-froid en montagne. Je suis tout à fait à l’aise en premier comme en second. Je suis toujours à la recherche de nouveaux partenaires pour partir en montagne, si t’as un projet qui match, ça te dise qu’on parte ensemble ? Fille ou garçon, débutant ou expert, peu importe.'
+    const [textShowed, setTextShowed] = useState(TextAbstract(text, 220))
+
+    
+    function TextAbstract(text, length) {
+        if (text.length <= length) return text; // if text is inferior at length don't need to wrap it
+        
+        text = text.substring(0, length); // substract the string to be 220 char max
+        return text + "..."; // return the string with ...
+    }
+
+    const showText = (text) => { // when click to show the text not wrapped
+        // if the text is already showed, wrap it, otherwise show it
+        textShowed === text ? setTextShowed(TextAbstract(text, 220)) : setTextShowed(text);
+    }
+
     return (
         <div className={styles.container}>
 
@@ -35,21 +54,17 @@ export default function Profile() {
                         <p><GiWarPick color="#353535" size="3vh" style={{'margin-right': '20px'}} />Glace : 5</p>
                         <p><GiMountaintop color="#353535" size="3vh" style={{'margin-right': '20px'}} />Montagne : ED</p>
                     </div>
-                    <div><a href="#"><GiRoundStar />12 Avis</a></div>
-                    <div><FaMountain /><a href="#">12 Expéditions finies</a></div>
-                    <div><FaMountain /><a href="#">3 Expéditions postées</a></div>
-                    <span><HiOutlineIdentification />Identité vérifiée</span>
-                    <p>
-                        Salut,
-                        Moi c’est Matthias, j’arpente les montagnes depuis un bon bout de temps maintenant.
-                        J’ai un bon niveau en rocher et surtout un bon sang-froid en montagne. Je suis tout
-                        à fait à l’aise en premier comme en second. Je suis toujours à la recherche de nouveaux
-                        partenaires pour partir en montagne, si t’as un projet qui match, ça te dise qu’on parte
-                        ensemble ? Fille ou garçon, débutant ou exp...
+                    <hr />
+                    <div className={styles.links}><GiRoundStar color="#353535" size="3vh" style={{'margin-right': '20px'}} /><a href="#">12 Avis</a></div>
+                    <div className={styles.links}><FaMountain color="#353535" size="3vh" style={{'margin-right': '20px'}} /><a href="#">12 Expéditions finies</a></div>
+                    <div className={styles.links}><FaMountain color="#353535" size="3vh" style={{'margin-right': '20px'}} /><a href="#">3 Expéditions postées</a></div>
+                    <div className={styles.links}><HiOutlineIdentification color="#353535" size="3vh" style={{'margin-right': '20px'}} />Identité vérifiée</div>
+                    <p className={styles.description}>
+                        {textShowed}
                     </p>
-                    <div className={styles.see_all}>
+                    <div onClick={() => showText(text)} className={styles.see_all}>
                         <p>Voir Tout</p>
-                        <FiChevronDown />
+                        <FiChevronDown color="#353535" />
                     </div>
                 </div>
 

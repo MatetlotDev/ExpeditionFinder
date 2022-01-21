@@ -8,18 +8,18 @@
 
     main {
         display: flex;
-        max-height: 82vh;
         padding: 3vh 6vw;
         font-family: 'Ruda';
         color: $dark_grey;
 
         .profile_info {
-            max-height: 90%;
             width: 20vw;
             background: #fff;
             border-radius: 6px;
             border: 1px solid $dark_grey;
             padding: 1vh;
+            display: flex;
+            flex-direction: column;
 
             h2 {
                 font-size: 2.5vh;
@@ -56,6 +56,33 @@
                     display: flex; 
                     align-items: center;
                 }
+            }
+            hr {
+                width: 60%;
+                align-self: center;
+                margin: 1vh;
+            }
+            .links {
+                display: flex;
+                align-items: center;
+                font-size: 2vh;
+                font-weight: 700;
+                margin: 0.5vh 1vw;
+                a { color: $dark_grey; }
+            }
+            .description {
+                font-family: 'Raleway';
+                font-weight: 300;
+                padding: 1vh;
+                font-size:  2vh;
+            }
+            .see_all {
+                align-self: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-weight: 700;
+                cursor: pointer;
             }
         }
 
