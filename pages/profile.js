@@ -3,11 +3,12 @@ import NavBar from '../comps/navBar';
 
 import { useState } from 'react';
 
-import { FaRegEdit, FaMountain } from 'react-icons/fa';
+import { FaRegEdit, FaMountain, FaInfoCircle } from 'react-icons/fa';
 import { RiMenLine } from 'react-icons/ri';
 import { GiMountainClimbing, GiRoundStar, GiWarPick, GiMountaintop } from 'react-icons/gi';
 import { HiOutlineIdentification } from 'react-icons/hi';
 import { FiChevronDown } from 'react-icons/fi';
+import { BsCheck2Circle } from 'react-icons/bs';
 import Image from 'next/image';
 
 export default function Profile() {
@@ -34,6 +35,8 @@ export default function Profile() {
             <NavBar />
 
             <main>
+
+                {/* left card with profile info */}
                 <div className={styles.profile_info}>
                     <h2>Profile <FaRegEdit color="#353535" /></h2>
                     <div className={styles.user_infos}>
@@ -68,8 +71,59 @@ export default function Profile() {
                     </div>
                 </div>
 
+                {/* right card with the content of the profile */}
                 <div className={styles.profile_content}>
-
+                    <div className={styles.header}>
+                        <h2>Expéditions finies</h2>
+                        <h4>+ Ajouter une ancienne expédition</h4>
+                    </div>
+                    <div className={styles.card}>
+                        <div className={styles.exp_state}>
+                            <BsCheck2Circle />
+                            <span>Ascension Réussie</span>
+                        </div>
+                        <div className={styles.preview}>
+                            <h3>Aperçu</h3>
+                            <div className={styles.content}>
+                                <p>11/02/2021</p>
+                                <h2>Nom Montagne - Nom de la voie</h2>
+                                <div className={styles.specs}>
+                                    <p>Niveau min: ED- 6c 6b 5 <FaInfoCircle color='#46B3BA' /></p>
+                                    <p>Configuration: Face</p>
+                                    <p>Durée: 2 jours</p>
+                                </div>
+                                <div className={styles.pics}>
+                                    <div className={styles.image_wraper}>
+                                        <Image className={styles.image} src='/images/directeamericaine1.jpg' layout='fill' objectFit='cover' />
+                                    </div>
+                                    <div className={styles.image_wraper}>
+                                        <Image className={styles.image} src='/images/directeamericaine2.jpg' layout='fill' objectFit='cover' />
+                                    </div>
+                                    <div className={styles.image_wraper}>
+                                        <Image className={styles.image} src='/images/directeamericaine3.jpg' layout='fill' objectFit='cover' />
+                                    </div>
+                                </div>
+                                <h6>Voir itinéraire sur <a href="#">CampToCamp</a></h6>
+                            </div>
+                        </div>
+                        <div className={styles.comments}>
+                            <h3>Commentaires</h3>
+                            <div className={styles.content}>
+                                <div className={styles.user}>
+                                    <div className={styles.avatar_wraper}>
+                                        <Image className={styles.avatar} src='/images/person4.jpg' layout='fill' objectFit='cover' />
+                                        <span className={styles.country}><Image src="/icons/belgium.png" width={15} height={15} alt='country' /></span>
+                                    </div>
+                                    <div className={styles.user_infos}>
+                                        <h6>Nom Prénom</h6>
+                                        <p>expérience - age</p>
+                                    </div>
+                                </div>
+                                <p className={styles.comment}>Super ascension, Matthias est une chouette personne et à un très bon niveau, nous n’aurions pas fait le sommet sans lui.</p>
+                                <input type="text" name="" id="" placeholder='Répondre' />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </main>
         </div>
