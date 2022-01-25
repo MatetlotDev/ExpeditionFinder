@@ -1,7 +1,7 @@
 import styles from '../styles/Discover.module.scss';
 import NavBar from '../comps/navBar';
 import Image from 'next/image'
-import Card from '../comps/card';
+import ExpCard from '../comps/ExpCard';
 
 import { FaAngleDown, FaMapMarkerAlt } from 'react-icons/fa';
 import { VscChromeClose } from 'react-icons/vsc';
@@ -34,7 +34,7 @@ export default function Discover() {
                     {/* cards */}
                     <div className={styles.cards}>
 
-                        {numbe.map(el => <Card /> )}
+                        {numbe.map(el => <ExpCard open={false} clickable={true} /> )}
 
                     </div>
                 </div>

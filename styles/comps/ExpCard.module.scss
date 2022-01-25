@@ -1,0 +1,109 @@
+@import '../colors.scss';
+
+.card {
+    background: #fff;
+    border-radius: 6px;
+    border: 1px solid $dark_grey;
+    padding: 1vh;
+    width: 100%;
+    color: $dark_grey;
+    margin-bottom: 5px;
+    cursor: pointer;
+    display: flex;
+    overflow: hidden;
+
+    .left_card {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid $dark_grey;
+        padding: 1vh;
+
+        .user_infos {
+            display: flex;
+            margin-bottom: 4vh;
+
+            .avatar_wraper {
+                position: relative;
+                width: 6vmin;
+                height: 6vmin;
+                display: flex;
+                align-items: flex-end;
+                border-radius: 50%;
+                
+                .avatar {
+                    border-radius: 50%;                            
+                }
+
+                .country {
+                    position: absolute;
+                    bottom: -3px;
+                    left: -3px;
+                }
+            }
+
+            .infos {
+                padding-left: 0.7vh;
+            }
+        }
+
+        .date {
+            align-self: flex-end;
+            font-size: 0.9em;
+            color: #a7a7a7;
+            margin-bottom: 5px;
+        }
+        .description {
+            font-family: 'Raleway';
+        }
+        button {
+            margin-top: 20px;
+            padding: 5px 10px;
+            border-radius: 6px;
+            background: $turquoise;
+            border: 1px solid $dark_grey;
+            color: #fff;
+            font: 1em 'Ruda';
+            align-self: center;
+            cursor: pointer;
+        }
+    }
+    
+    .right_card {
+        width: 50%;
+        padding: 10px;
+        font-weight: 700;
+
+        .course {
+            display: flex;
+            align-items: center;
+            & :nth-child(1){ margin-right: 5px; }
+        }
+        h3, .course{
+            font-size: 3vh;                        
+        }
+        p{
+            &:nth-child(2){ margin-top: 15px; }
+            &:nth-child(6){ margin-bottom: 15px; }
+        }
+        .pictures {
+            display: flex;
+            margin-bottom: 15px;
+
+            .image_wraper {
+                position: relative;
+                width: 10vmin;
+                height: 10vmin;
+                border: 1px solid $dark_grey;
+                border-radius: 6px;
+                margin-right: 5px;
+                .image { border-radius: 6px; }
+            }
+        }
+        h6{
+            font-size: 1.3em;
+            font-weight: 700;
+            a { color: $dark_grey; }
+        }
+    }            
+}

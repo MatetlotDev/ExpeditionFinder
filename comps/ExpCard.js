@@ -1,16 +1,16 @@
 import Image from 'next/image'
 import { FaInfoCircle } from 'react-icons/fa';
 import { RiMenLine } from 'react-icons/ri';
-import styles from '../styles/Discover.module.scss';
+import styles from '../styles/comps/ExpCard.module.scss';
 import { useState } from 'react';
 
 
-export default function Card() {
+export default function ExpCard(props) {
 
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(props.open)
 
     const openCard = () => {
-        setIsOpen(!isOpen);
+        if(props.clickable) setIsOpen(!isOpen);
     }
 
     return (

@@ -1,0 +1,62 @@
+@import '../colors.scss';
+
+.card {
+    border: 1px solid $green;
+    border-radius: 6px;
+    margin-top: 5px;
+    position: relative;
+    display: flex;
+    font-weight: 700;
+
+    .exp_state {
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: $green;
+        display: flex; 
+        align-items: center;
+        margin: 0.5vh;
+    }
+
+    .preview {
+        margin: 1vh;
+        
+        .content {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid $dark_grey;
+            padding: 1vh;
+            margin-top: 0.5vh;
+            border-radius: 6px;
+            min-width: max-content;
+
+            p {
+                font-size: 1.2vh;
+                align-self: flex-end;
+            }
+            .specs {
+                margin: 1vh;
+                p {
+                    font-size: 1.8vh;
+                }
+            }
+            .pics {
+                display: flex;
+
+                .image_wraper {
+                    position: relative;
+                    min-width: 7vmin;
+                    min-height: 7vmin;
+                    border-radius: 6px;
+                    border: 1px solid $dark_grey;
+                    margin: 0.5vh;
+                    .image { border-radius: 6px; }
+                }
+            }
+            h6 {
+                font-size: 2vh;
+                a { color: $dark_grey; }
+            }
+        }
+    }
+}
