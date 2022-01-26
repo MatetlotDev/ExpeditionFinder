@@ -1,25 +1,13 @@
-import styles from '../styles/Home.module.scss'
-import Image from 'next/image'
+import styles from '../styles/Home.module.scss';
+import Image from 'next/image';
+import Link from 'next/link';
+import NavBar from '../comps/NavBar';
 
 export default function Home() {
   return (
     <div className={styles.container}>
 
-      {/* navbar */}
-      <nav className={styles.navbar}>
-        <div className={styles.logo}>
-          <Image src='/icons/logo_noir.png' width={100} height={100} />
-          <p>Expedition Finder</p>
-        </div>
-        <div className={styles.menu}>
-          <div className={styles.image}>
-            <Image src='/icons/email_noir.png' width={40} height={40} />
-          </div>
-          <div className={styles.image}>
-            <Image src='/icons/user_noir.png' width={50} height={50} />
-          </div>
-        </div>
-      </nav>
+      <NavBar />
 
       {/* before scroll */}
       <main className={styles.main}>
@@ -41,7 +29,7 @@ export default function Home() {
 
         <div className={styles.card_discover}>
           <h6>Pas encore de projet ?</h6>
-          <button>Découvrir les expéditions</button>
+          <Link href="/discover"><button>Découvrir les expéditions</button></Link>
           <p>Parcours les projets des autres personnes et choisi en un qui te tente.</p>
         </div>
 
@@ -120,7 +108,7 @@ export default function Home() {
           </div>
           <div className={styles.card_discover}>
             <p>Découvre autour de toi les personnes qui proposent déjà un projet. Si le projet t'intéresse prend directement contact avec la personne.</p>
-            <button>Découvrir les expéditions</button>
+            <Link href="/discover"><button>Découvrir les expéditions</button></Link>
           </div>
           <div className={styles.svg}>
             <Image src='/svg/undraw_adventure_re_ncqp.svg' width={293} height={193} />

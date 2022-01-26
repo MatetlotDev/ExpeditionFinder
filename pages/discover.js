@@ -1,5 +1,5 @@
 import styles from '../styles/Discover.module.scss';
-import NavBar from '../comps/navBar';
+import NavBar from '../comps/NavBar';
 import Image from 'next/image'
 import ExpCard from '../comps/ExpCard';
 

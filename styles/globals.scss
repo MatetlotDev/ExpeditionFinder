@@ -9,47 +9,5 @@
 //   font-family: 'Raleway';
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 2em 1em 0;
-  font-family: 'Raleway';
 
-  .logo {
-      text-align: center;
-
-      &, p {
-          margin-top: -1em;
-      }
-  }
-
-  .menu {
-      display: flex;
-      align-items: center;
-
-      .search {
-          width: 15vw;
-          background: #fff;
-          border: 1px solid $dark_grey;
-          border-radius: 6px;
-          padding: 5px;
-          display: flex;
-          align-items: center;
-          margin-right: 4em;
-      }
-      .mail_icon, .add_icon {
-          width: 35px; 
-          height: 35px; 
-          color: $dark_grey;
-          margin-right: 4em;
-          cursor: pointer;
-      }
-      .user_icon {
-          width: 45px;
-          height: 45px;
-          cursor: pointer;
-          color: $dark_grey;
-      }
-  }
-}
 

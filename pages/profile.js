@@ -1,5 +1,5 @@
 import styles from '../styles/Profile.module.scss';
-import NavBar from '../comps/navBar';
+import NavBar from '../comps/NavBar';
 import ExpDone from '../comps/ExpDone';
 import ExpPosted from '../comps/ExpPosted';
 import Comment from '../comps/Comment';
