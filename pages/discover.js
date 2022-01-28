@@ -11,6 +11,7 @@ import { useState } from 'react';
 export default function Discover() {
 
     const numbe = [5,5,5,5,5];
+    
 
     return (
         <div className={styles.container}>

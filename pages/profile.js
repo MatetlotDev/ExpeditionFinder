@@ -76,15 +76,15 @@ export default function Profile() {
                 {/* right card with the content of the profile */}
                 <div className={styles.profile_content}>
                     <div className={styles.header}>
-                        {/* <h2>Expéditions postées</h2>
-                        <h4>+ Proposer une nouvelle expédition</h4> */}
-                        {/* <h2>Expéditions finies</h2> */}
-                        {/* <h4>+ Ajouter une ancienne expédition</h4> */}
+                        <h2>Expéditions postées</h2>
+                        <h4>+ Proposer une nouvelle expédition</h4>
+                        {/* <h2>Expéditions finies</h2> 
+                        <h4>+ Ajouter une ancienne expédition</h4> */}
                     </div>
 
-                    <Comment />
+                    {/* <Comment /> */}
                     {/* {<ExpDone />} */}
-                    {/* {<ExpPosted />} */}
+                    {<ExpPosted />}
 
                 </div>
             </main>
