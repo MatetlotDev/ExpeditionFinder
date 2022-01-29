@@ -18,6 +18,7 @@ export default function Discover() {
     const [pinInfos, setPinInfos] = useState('none')
 
 
+
     return (
         <div className={styles.container}>
 
