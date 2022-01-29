@@ -1,6 +1,7 @@
 import styles from '../styles/Discover.module.scss';
 import NavBar from '../comps/NavBar';
-import Image from 'next/image'
+import Image from 'next/image';
+import GoogleMap from 'google-map-react';
 import ExpCard from '../comps/ExpCard';
 
 import { FaAngleDown, FaMapMarkerAlt } from 'react-icons/fa';
@@ -49,7 +50,18 @@ export default function Discover() {
                         </div>
                     </div>
                     <div className={styles.map}>
-                        <Image className={styles.map_image} src='/images/map.png' layout='fill' objectFit='cover' />
+                        <GoogleMap
+                            bootstrapURLKeys={{ key: process.env.GOOGLE_MAP }}
+                            defaultCenter={{
+                                address: 'Rue Claude Strebelle, 4031 Angleur, Belgium',
+                                lat: 50.588420,
+                                lng: 5.570870,
+                              }}
+                            defaultZoom={12}
+                        >
+
+                        </GoogleMap>
+                        {/* <Image className={styles.map_image} src='/images/map.png' layout='fill' objectFit='cover' /> */}
                     </div>
                 </div>
 
