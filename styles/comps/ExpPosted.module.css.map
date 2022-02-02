@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,eAAe,CAAC;EACZ,aAAa,EAAE,GAAG;EAClB,MAAM,EAAE,GAAG,CAAC,KAAK,CCHT,OAAO;EDIf,OAAO,EAAE,IAAI;CAShB;;AAZD,AAKI,eALW,CAKX,OAAO,CAAC;EACJ,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,WAAW,EAAE,MAAM;EACnB,SAAS,EAAE,KAAK;EAChB,OAAO,EAAE,aAAa;CACzB",
+    "sources": [
+        "ExpPosted.module.scss",
+        "../colors.scss"
+    ],
+    "names": [],
+    "file": "ExpPosted.module.css"
+}

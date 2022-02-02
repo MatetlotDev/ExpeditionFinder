@@ -1,0 +1,87 @@
+.card {
+  border: 1px solid #65B16C;
+  border-radius: 6px;
+  margin-top: 5px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 700;
+}
+
+.card .exp_state {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #65B16C;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.5vh;
+}
+
+.card .preview {
+  margin: 1vh;
+}
+
+.card .preview .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid #353535;
+  padding: 1vh;
+  margin-top: 0.5vh;
+  border-radius: 6px;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+}
+
+.card .preview .content p {
+  font-size: 1.2vh;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.card .preview .content .specs {
+  margin: 1vh;
+}
+
+.card .preview .content .specs p {
+  font-size: 1.8vh;
+}
+
+.card .preview .content .pics {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card .preview .content .pics .image_wraper {
+  position: relative;
+  min-width: 7vmin;
+  min-height: 7vmin;
+  border-radius: 6px;
+  border: 1px solid #353535;
+  margin: 0.5vh;
+}
+
+.card .preview .content .pics .image_wraper .image {
+  border-radius: 6px;
+}
+
+.card .preview .content h6 {
+  font-size: 2vh;
+}
+
+.card .preview .content h6 a {
+  color: #353535;
+}
+/*# sourceMappingURL=ExpDone.module.css.map */
