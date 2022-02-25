@@ -13,7 +13,7 @@ If no one look interesting for you, then you can add your own expedition and wai
 
 ### Which technos ?
 
-I decided to use for this project Next.js, Node.js and MySQL. Why ? Because I didn't know them before start and I wanted to try them.
+I decided to use for this project Next.js, Node.js and MongoDB. Why ? Because I wanted to make a first try with next.js wich I heard a lot about.
 
 ### First mockups
 
