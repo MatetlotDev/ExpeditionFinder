@@ -2,7 +2,7 @@ import styles from '../styles/Home.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import NavBar from '../comps/NavBar';
-import CreateAccountModal from '../comps/CreateAccountModal';
+import LoginModal from '../comps/createAccount/LoginModal';
 
 import React, {useEffect, useState} from 'react'
 
@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
 
-      <CreateAccountModal state={modalState} handleModalState={handleModalState} />
+      <LoginModal state={modalState} handleModalState={handleModalState} />
 
       <NavBar />
 

@@ -8,9 +8,9 @@ import { FcGoogle } from 'react-icons/fc'
 import { FiMail } from 'react-icons/fi'
 import { FaFacebookF, FaApple } from 'react-icons/fa'
 
-import styles from '../styles/comps/CreateAccountModal.module.scss'
+import styles from '../styles/comps/createAccount/LoginModal.module.scss'
 
-export default function CreateAccountModal({ state, handleModalState }) {
+export default function LoginModal({ state, handleModalState }) {
 
 
     return (

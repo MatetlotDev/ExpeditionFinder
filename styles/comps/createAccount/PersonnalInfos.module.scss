@@ -1,0 +1,97 @@
+@import '../../colors.scss';
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 6px;
+    border: 1px solid $dark_grey;
+    background: #fff;
+    position: relative;
+    min-width: 450px;
+
+    .profile_image {
+        width: 13vmin;
+        height: 13vmin;
+        position: relative;
+        align-self: center;
+        margin-top: 1rem;
+        border-radius: 50%;
+
+        .country_image, .image {
+            border-radius: 50%;
+        }
+
+        .country {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-radius: 50%;
+            border: 1px solid $dark_grey;
+            width: 3.5vmin;
+            height: 3.5vmin;
+        }
+
+        .gender {
+            position: absolute;
+            top: -8%;
+            right: -8%;
+        }
+
+        .add_picture {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: $light_grey;
+            font-size: 2.5rem;
+            cursor: pointer;
+        }
+    }
+
+    input, select {
+        font-size: 1.4rem;
+        padding: .2rem;
+        font-family: 'Ruda';
+        margin-top: .2rem;
+        width: fit-content;
+    }
+    select[name="gender"] {
+        margin-top: 1.5rem;
+    }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        filter: invert(100%);
+    }
+    input[name="email"] {
+        min-width: -webkit-fill-available;
+    }
+    input[name="password"] {
+        min-width: 80%;
+    }
+    input[type='file'] {
+        display: none;
+    }
+
+    button {
+        border: 1px solid $dark_grey;
+        border-radius: 6px;
+        text-align: center;
+        background: $turquoise;
+        color: #fff;
+        padding: 0.2em 1.6em;
+        font-size: 1.2em;
+        cursor: pointer;
+        margin: 1rem auto;
+    }
+
+    input, select, button {
+        display: block;
+    }
+
+    .svg_wrapper {
+        position: absolute;
+        top: 50%;
+        right: -100%;
+        transform: translateY(-50%);
+    }
+}
