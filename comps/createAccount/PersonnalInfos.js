@@ -7,10 +7,13 @@ import { IoFemale, IoMaleFemale, IoMale } from 'react-icons/io5'
 
 import Image from 'next/image'
 
+import { useDispatch } from 'react-redux'
 
-export default function PersonnalInfos({nextStep}) {
+
+export default function PersonnalInfos({ nextStep }) {
 
   const inputFile = useRef()
+  const dispatch = useDispatch()
 
   const [countryIcon, setCountryIcon] = useState('')
   const [genderIcon, setGenderIcon] = useState('')
@@ -52,44 +55,48 @@ export default function PersonnalInfos({nextStep}) {
 
   const selectCountry = country => setCountryIcon(<Image className={styles.country_image} src={countries.filter(el => el.name === country)[0].flag} layout="fill" objectFit='cover' />);
 
+  const dispatchContent = () => {
+    dispatch({ type: 'updateContent', content: imageUrl })
+    nextStep()
+  }
 
   return (
     <div className={styles.card}>
 
-          <h2>Informations personnelles</h2>
+      <h2>Informations personnelles</h2>
 
-          <div className={styles.profile_image} onClick={() => inputFile.current.click()}>
-            <Image className={styles.image} src={imageUrl || '/svg/undraw_profile_pic_ic-5-t.svg'} layout="fill" objectFit='cover' />
-            <div className={styles.country}>{countryIcon}</div>
-            <div className={styles.gender}>{genderIcon}</div>
-            <MdCameraEnhance className={styles.add_picture} style={{ display: imageUrl ? 'none' : 'block' }} />
-          </div>
+      <div className={styles.profile_image} onClick={() => inputFile.current.click()}>
+        <Image className={styles.image} src={imageUrl || '/svg/undraw_profile_pic_ic-5-t.svg'} layout="fill" objectFit='cover' />
+        <div className={styles.country}>{countryIcon}</div>
+        <div className={styles.gender}>{genderIcon}</div>
+        <MdCameraEnhance className={styles.add_picture} style={{ display: imageUrl ? 'none' : 'block' }} />
+      </div>
 
-          <form onSubmit={nextStep}>
-            <input ref={inputFile} type="file" name="picture" id="picture" onChange={e => setImage(e.target.files[0])} />
-            <select name="gender" id="gender" onChange={v => selectGender(v.target.value)}>
-              <option disabled selected >Genre</option>
-              <option value="male">Monsieur</option>
-              <option value="female">Madame</option>
-              <option value="none">Non binaire</option>
-            </select>
-            <input type="text" name="firstName" placeholder='Nom' />
-            <input type="text" name="lastName" placeholder='Prénom' />
-            <input type="text" name="email" placeholder='Email' />
-            <input type="text" onFocus={v => v.target.type = 'date'} placeholder='Date de naissance' />
-            <select name="country" id="country" onChange={v => selectCountry(v.target.value)}>
-              <option disabled selected >Nationalité</option>
-              {countries.map(el => <option key={el.name} value={el.name}>{el.name}</option>)}
-            </select>
-            <input type="password" name="password" placeholder='Mot de passe' />
-            <input type="password" name="password" placeholder='Confirmer mot de passe' />
-            <button type="submit">Suivant</button>
-          </form>
+      <form onSubmit={dispatchContent}>
+        <input ref={inputFile} type="file" name="picture" id="picture" onChange={e => setImage(e.target.files[0])} />
+        <select name="gender" id="gender" onChange={v => selectGender(v.target.value)}>
+          <option disabled selected >Genre</option>
+          <option value="male">Monsieur</option>
+          <option value="female">Madame</option>
+          <option value="none">Non binaire</option>
+        </select>
+        <input type="text" name="firstName" placeholder='Nom' />
+        <input type="text" name="lastName" placeholder='Prénom' />
+        <input type="text" name="email" placeholder='Email' />
+        <input type="text" onFocus={v => v.target.type = 'date'} placeholder='Date de naissance' />
+        <select name="country" id="country" onChange={v => selectCountry(v.target.value)}>
+          <option disabled selected >Nationalité</option>
+          {countries.map(el => <option key={el.name} value={el.name}>{el.name}</option>)}
+        </select>
+        <input type="password" name="password" placeholder='Mot de passe' />
+        <input type="password" name="password" placeholder='Confirmer mot de passe' />
+        <button type="submit">Suivant</button>
+      </form>
 
-          <div className={styles.svg_wrapper}>
-            <Image src="/svg/undraw_wall_post_re_y78d.svg" width={300} height={200} />
-          </div>
+      <div className={styles.svg_wrapper}>
+        <Image src="/svg/undraw_wall_post_re_y78d.svg" width={300} height={200} />
+      </div>
 
-        </div>
+    </div>
   )
 }

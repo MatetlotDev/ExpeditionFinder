@@ -13,9 +13,8 @@ export default function createAccount() {
 
   let content = '';
 
-  const nextStep = () => {
-    setActualStep(actualStep + 1)
-  }
+  const nextStep = () => setActualStep(actualStep + 1)
+  
 
   if(actualStep === 0) content = <PersonnalInfos nextStep={nextStep} />;
   else if(actualStep === 1) content = <Languages />;
