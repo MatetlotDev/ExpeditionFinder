@@ -10,7 +10,7 @@ import Image from 'next/image'
 import { useDispatch } from 'react-redux'
 
 
-export default function PersonnalInfos({ nextStep }) {
+export default function PersonnalInfos({ nextStep, countries }) {
 
   const inputFile = useRef()
   const gender = useRef()
@@ -20,7 +20,6 @@ export default function PersonnalInfos({ nextStep }) {
   const [countryIcon, setCountryIcon] = useState('')
   const [genderIcon, setGenderIcon] = useState('')
   const [imageUrl, setImageUrl] = useState('')
-  const [countries, setCountries] = useState([])
   const [image, setImage] = useState('')
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
@@ -29,15 +28,7 @@ export default function PersonnalInfos({ nextStep }) {
   const [psw1, setPsw1] = useState('')
   const [psw2, setPsw2] = useState('')
 
-  useEffect(() => {
-    (async () => {
-      const req = await fetch('https://restcountries.com/v3.1/region/europe')
-      const res = await req.json()
 
-      res.forEach(e => setCountries(arr => [...arr, { name: e.name.common, flag: e.flags.svg }]))
-
-    })()
-  }, [])
 
   useEffect(() => {
     (async () => {

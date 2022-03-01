@@ -7,7 +7,7 @@ import { IoMale } from 'react-icons/io5'
 
 import { useSelector } from 'react-redux'
 
-export default function Overview() {
+export default function Overview({ actualStep }) {
 
     const firstStepContent = useSelector(str => str.createAccountContent)
 
