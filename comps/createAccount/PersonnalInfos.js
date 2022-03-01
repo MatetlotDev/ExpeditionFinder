@@ -13,6 +13,8 @@ import { useDispatch } from 'react-redux'
 export default function PersonnalInfos({ nextStep }) {
 
   const inputFile = useRef()
+  const gender = useRef()
+  const country = useRef()
   const dispatch = useDispatch()
 
   const [countryIcon, setCountryIcon] = useState('')
@@ -20,6 +22,12 @@ export default function PersonnalInfos({ nextStep }) {
   const [imageUrl, setImageUrl] = useState('')
   const [countries, setCountries] = useState([])
   const [image, setImage] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('')
+  const [birthDate, setBirthDate] = useState('')
+  const [psw1, setPsw1] = useState('')
+  const [psw2, setPsw2] = useState('')
 
   useEffect(() => {
     (async () => {
@@ -56,8 +64,20 @@ export default function PersonnalInfos({ nextStep }) {
   const selectCountry = country => setCountryIcon(<Image className={styles.country_image} src={countries.filter(el => el.name === country)[0].flag} layout="fill" objectFit='cover' />);
 
   const dispatchContent = () => {
-    dispatch({ type: 'updateContent', content: imageUrl })
-    nextStep()
+    if(psw1 === psw2){
+      dispatch({ type: 'updateContent', content: {
+        image: imageUrl,
+        gender: gender.current.value,
+        firstname: firstName,
+        lastName: lastName,
+        email: email,
+        birthDate: birthDate,
+        country: country.current.value,
+        password: psw2,
+      } })
+
+      nextStep()
+    }
   }
 
   return (
@@ -73,23 +93,23 @@ export default function PersonnalInfos({ nextStep }) {
       </div>
 
       <form onSubmit={dispatchContent}>
-        <input ref={inputFile} type="file" name="picture" id="picture" onChange={e => setImage(e.target.files[0])} />
-        <select name="gender" id="gender" onChange={v => selectGender(v.target.value)}>
+        <input ref={inputFile} type="file" name="picture" id="picture" onChange={e => setImage(e.target.files[0])} required />
+        <select ref={gender} name="gender" id="gender" onChange={v => selectGender(v.target.value)} required>
           <option disabled selected >Genre</option>
           <option value="male">Monsieur</option>
           <option value="female">Madame</option>
           <option value="none">Non binaire</option>
         </select>
-        <input type="text" name="firstName" placeholder='Nom' />
-        <input type="text" name="lastName" placeholder='Prénom' />
-        <input type="text" name="email" placeholder='Email' />
-        <input type="text" onFocus={v => v.target.type = 'date'} placeholder='Date de naissance' />
-        <select name="country" id="country" onChange={v => selectCountry(v.target.value)}>
+        <input type="text" name="firstName" placeholder='Nom' onChange={v => setFirstName(v.target.value)} value={firstName} required />
+        <input type="text" name="lastName" placeholder='Prénom' onChange={v => setLastName(v.target.value)} value={lastName} required />
+        <input type="email" name="email" placeholder='Email' onChange={v => setEmail(v.target.value)} value={email} required />
+        <input type="text" onFocus={v => v.target.type = 'date'} placeholder='Date de naissance' onChange={v => setBirthDate(v.target.value)} value={birthDate} required />
+        <select ref={country} name="country" id="country" onChange={v => selectCountry(v.target.value)} required>
           <option disabled selected >Nationalité</option>
           {countries.map(el => <option key={el.name} value={el.name}>{el.name}</option>)}
         </select>
-        <input type="password" name="password" placeholder='Mot de passe' />
-        <input type="password" name="password" placeholder='Confirmer mot de passe' />
+        <input type="password" name="password" placeholder='Mot de passe' onChange={v => setPsw1(v.target.value)} value={psw1} required />
+        <input type="password" name="password" placeholder='Confirmer mot de passe' onChange={v => setPsw2(v.target.value)} value={psw2} required />
         <button type="submit">Suivant</button>
       </form>
 

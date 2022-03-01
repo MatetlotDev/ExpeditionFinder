@@ -1,2 +1,56 @@
 @import '../../colors.scss';
 
+.card {
+    border: 1px solid $dark_grey;
+    border-radius: 6px;
+    background: #fff;
+    padding: 1rem;
+    color: $dark_grey;
+    max-width: 35vw;
+    margin: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .add_lang {
+        padding: 0.2rem 0.5rem;
+        margin: 1rem 0;
+        font-size: 1.2rem;
+        font-family: 'Ruda', sans-serif;
+        border-radius: 6px;
+        border: 1px solid $dark_grey;
+        color: $dark_grey;
+        cursor: pointer;
+    }
+
+    .next {
+        align-self: center;
+        position: relative;
+
+        button {
+            border: 1px solid $dark_grey;
+            border-radius: 6px;
+            text-align: center;
+            background: $turquoise;
+            color: #fff;
+            padding: 0.2em 1.6em;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin: 1rem auto;
+        }
+
+        a {
+            color: $dark_grey;
+            margin-left: 1rem;
+            position: absolute;
+            top: 50%;
+            right: -50%;
+            transform: translateY(-50%);
+        }
+    }
+
+}
+
+.svg_wrapper {
+    margin-left: 20vw;
+}

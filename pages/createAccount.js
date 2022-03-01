@@ -9,7 +9,7 @@ import Languages from '../comps/createAccount/Languages'
 
 export default function createAccount() {
 
-  const [actualStep, setActualStep] = useState(0)
+  const [actualStep, setActualStep] = useState(1)
 
   let content = '';
 
