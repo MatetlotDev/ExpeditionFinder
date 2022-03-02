@@ -18,6 +18,9 @@ export default function Overview({ actualStep }) {
 
     const age = Math.abs(((new Date(Date.now() - (new Date(firstStepContent.birthDate)).getTime())).getUTCFullYear()) - 1970)
 
+    let languages = '';
+    if(actualStep >= 2) languages = firstStepContent.languages.join(' / ')
+
     return (
         <div className={styles.profile_info}>
             <h2>Aperçu</h2>
@@ -31,10 +34,28 @@ export default function Overview({ actualStep }) {
                 <div className={styles.infos}>
                     <h6>{firstStepContent.firstName + ' ' + firstStepContent.lastName}</h6>
                     <p>{age} ans</p>
+                    <p>{languages}</p>
                 </div>
             </div>
 
             <p className={styles.date}>Membre depuis {(new Date).toLocaleDateString()}</p>
+
+            {/* {(() => {
+                if(actualStep >= 3) return (
+                    <div>
+                        <p>Niveau Général : </p>
+                        <p>   -   en Rocher : </p>
+                        <p>   -   en Glace : </p>
+                        <p>   -   en Montagne : </p>
+                    </div>
+                )
+                else if(actualStep >= 4) return (
+                    <div>
+                        avis
+                    </div>
+                ) 
+            })()} */}
+
         </div>
     )
 

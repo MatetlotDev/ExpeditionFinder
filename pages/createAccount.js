@@ -6,6 +6,7 @@ import NavBar from '../comps/NavBar'
 import PersonnalInfos from '../comps/createAccount/PersonnalInfos'
 import Languages from '../comps/createAccount/Languages'
 import TechnicalLevel from '../comps/createAccount/TechnicalLevel'
+import Description from '../comps/createAccount/Description'
 
 
 export default function createAccount() {
@@ -31,7 +32,8 @@ export default function createAccount() {
 
   if(actualStep === 0) content = <PersonnalInfos nextStep={nextStep} countries={countries} />;
   else if(actualStep === 1) content = <Languages nextStep={nextStep} actualStep={actualStep} countries={countries} />;
-  else if(actualStep === 2) content = <TechnicalLevel />
+  else if(actualStep === 2) content = <TechnicalLevel nextStep={nextStep} actualStep={actualStep} />
+  else if(actualStep === 3) content = <Description />
 
   return (
     <div className={styles.container}>
