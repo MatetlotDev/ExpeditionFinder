@@ -55,17 +55,20 @@ export default function PersonnalInfos({ nextStep, countries }) {
   const selectCountry = country => setCountryIcon(<Image className={styles.country_image} src={countries.filter(el => el.name === country)[0].flag} layout="fill" objectFit='cover' />);
 
   const dispatchContent = () => {
-    if(psw1 === psw2){
-      dispatch({ type: 'updateContent', content: {
-        image: imageUrl,
-        gender: gender.current.value,
-        firstname: firstName,
-        lastName: lastName,
-        email: email,
-        birthDate: birthDate,
-        country: country.current.value,
-        password: psw2,
-      } })
+    if (psw1 === psw2) {
+      dispatch({
+        type: 'updateContent',
+        content: {
+          image: imageUrl,
+          gender: gender.current.value,
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          birthDate: birthDate,
+          country: countries.filter(el => el.name === country.current.value)[0].flag,
+          password: psw2,
+        }
+      })
 
       nextStep()
     }

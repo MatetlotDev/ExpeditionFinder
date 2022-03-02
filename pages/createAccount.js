@@ -10,7 +10,7 @@ import TechnicalLevel from '../comps/createAccount/TechnicalLevel'
 
 export default function createAccount() {
 
-  const [actualStep, setActualStep] = useState(1)
+  const [actualStep, setActualStep] = useState(0)
   const [countries, setCountries] = useState([])
 
 
